@@ -1,19 +1,26 @@
 <html>
-<title>Annieleonia</title>
+<title>KrustyCookie.se</title>
 <body>
 
 <div class="transbox">
-       <p>Welcome to log in!</p>
+  <br>
+  <br>
+       <font size=6 face="avenir">Welcome to Krusty Cookie</font>
+
+       <br>
+       <font size=4 face="avenir"> <i> Log in or create a new account </i></font>
+       <br>
+       <br>
        <form method="post" action="login.php">
-           username:
+            <font size=4 face="avenir">Username: </font>
            <input type="text" size="20" name="username" >
            <br>
-           password:
+            <font size=4 face="avenir">Password:</font>
            <input type="password" size="20" name="password" >
            <br><br>
            <input type="submit" value="Log In">
-           or
-           <a href="createuser.php"> <input type="button" value="Create Account"></a>
+
+           <a href="createuser.php"> <input size=3 type="button" value="Create Account"></a>
         </form>
 </div>
 </body>
