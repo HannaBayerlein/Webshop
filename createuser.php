@@ -8,10 +8,13 @@
 <div class="login">
   <br>
   <br>
+  <font size=6 face="avenir">Create user to order cookies</font>
   <br>
-  <font size=8 face="avenir">Create User</font>
+  <font size=4 face="avenir"> <i> Fill in your information </i></font>
+  <br>
 
 <form method="post" action="login.php">
+  <br>
     <font size=4 face="avenir">Username: </font>
 
     <input type="text" size="20" name="username" >
