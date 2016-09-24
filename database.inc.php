@@ -80,6 +80,7 @@ class Database {
 			$error = "*** Internal error: " . $e->getMessage() . "<p>" . $query;
 			die($error);
 		}
+
 		return $result;
 	}
 
@@ -119,16 +120,19 @@ class Database {
 	 * @param username The user id
 	 * @return true if the user exists, false otherwise.
 	 */
-	public function userExists($username) {
-		$sql = "select username from users where username = ?";
-		$result = $this->executeQuery($sql, array($username));
-		return count($result) == 1;
+	public function correctUser($username, $password) {
+		$sql = "select password from users where username = ? and password = ?";
+		$result = $this->executeQuery($sql, array($username, $password));
+
+		return count($result) != 0;
 	}
 
 	public function passwordCorrect($username, $password){
-		$sql = "select count(password) from users where username = ? and password = ?";
-		$count= $this->executeQuery($sql, array($password));
-		return ($count==1);
+		$sql = "select count(*) from users where username = ? and password = ?";
+
+		$count= $this->executeQuery($sql, array($password, $username));
+		echo $count;
+		return $count != 0;
 	}
 }
 ?>

@@ -22,7 +22,7 @@ exit();
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
-if (!$db->userExists($username)) {
+if (!$db->correctUser($username, $password)) {
 
 $db->closeConnection();
 
@@ -31,6 +31,11 @@ header("Location: createuser.php");
 exit();
 
 }
+#else if(!$db->passwordCorrect($username, $password)){
+#  $message = "wrong answer";
+# echo "<script type='text/javascript'>alert('$message');</script>";
+#}
+
 $db->closeConnection();
 
 session_start();
