@@ -27,7 +27,7 @@ body{
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center center;      /* center bottom ?? bättre för avlång vy!! */
-  background-attachment: fixed;
+  background-attachment: fixed; 
   border: 0px solid black;
   align-content: center;
 }
