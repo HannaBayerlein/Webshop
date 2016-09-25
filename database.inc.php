@@ -114,10 +114,14 @@ class Database {
 	}
 
 	public function correctUser($username, $password) {
-		$sql = "select password from users where username = ? and password = ?";
-		$result = $this->executeQuery($sql, array($username, $password));
+		$sql = "select password from users where username = ?";
+		$result = $this->executeQuery($sql, array($username));
 
-		return count($result) != 0;
+		if(password_verify($password, $result)){
+			return true;
+
+		}
+			return false;
 	}
 
 

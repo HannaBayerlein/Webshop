@@ -21,6 +21,7 @@ exit();
 
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
+$hash = password_hash($password, PASSWORD_BCRYPT);
 $address = $_REQUEST['address'];
 
 if($password == null || $username == null || $address == null){
@@ -32,7 +33,7 @@ if($password == null || $username == null || $address == null){
 
 }
 
-  if (!$db->createUser($username, $password, $address)) {
+  if (!$db->createUser($username, $hash, $address)) {
 
     $db->closeConnection();
 
