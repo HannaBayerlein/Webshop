@@ -8,17 +8,21 @@
        <font size=6 face="avenir">Welcome to Krusty Cookie</font>
 
        <br>
-       <font size=4 face="avenir"> <i> Log in or create a new account </i></font>
+      <font size=3 color="green" face="avenir"> <b> Log in with your newly created account. </b></font>
        <br>
        <br>
        <form method="post" action="login.php">
-           <font size=4 face="avenir">Username: </font>
+            <font size=4 face="avenir">Username: </font>
            <input type="text" size="20" name="username" >
            <br>
-           <font size=4 face="avenir">Password:</font>
+            <font size=4 face="avenir">Password:</font>
            <input type="password" size="20" name="password" >
-           <br><br>
+           <br>
+
+           <br>
+           <br>
            <input type="submit" value="Log In">
+
            <a href="createUserPage.html"> <input size=3 type="button" value="Create Account"></a>
         </form>
 </div>
@@ -37,16 +41,20 @@ body{
   border: 0px solid black;
   align-content: center;
 }
+
 a:link {
     text-decoration: none;
 }
+
  form {
    color: #000000;
    font-size: 25px;
  }
+
  input[type=text], input[type=password]{
    width: 30%;
  }
+
  input[type=submit] {
    font-size: 25px;
    padding:5px 15px;
@@ -56,6 +64,7 @@ a:link {
    boder: 5px;
    border: 2px solid #000;
  }
+
  input[type=button] {
     font-size: 25px;
     color: #ffffff;
@@ -65,9 +74,11 @@ a:link {
     border-radius: 15px;
     border: 2px solid #000;
  }
+
 input[type=submit]:hover, input[type=button]:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
 div.transbox {
   width: 50%;
   height: 50%;
@@ -77,6 +88,7 @@ div.transbox {
   border-radius: 200px;
   text-align: center;
 }
+
 div.transbox p {
   font-family: Calibri;
   font-size: 35px;

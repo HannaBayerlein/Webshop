@@ -113,13 +113,6 @@ class Database {
 		}
 	}
 
-	/**
-	 * Check if a user with the specified user id exists in the database.
-	 * Queries the Users database table.
-	 *
-	 * @param username The user id
-	 * @return true if the user exists, false otherwise.
-	 */
 	public function correctUser($username, $password) {
 		$sql = "select password from users where username = ? and password = ?";
 		$result = $this->executeQuery($sql, array($username, $password));
@@ -127,12 +120,21 @@ class Database {
 		return count($result) != 0;
 	}
 
-	public function passwordCorrect($username, $password){
-		$sql = "select count(*) from users where username = ? and password = ?";
 
-		$count= $this->executeQuery($sql, array($password, $username));
-		echo $count;
-		return $count != 0;
+
+	public function createUser($username, $password, $address){
+		$sql1 = "select username from users where username = ?";
+		$result = $this->executeQuery($sql1, array($username));
+		if(count($result) == 0){
+			$sql = "insert into users (username, password, address) values (?, ?, ?)";
+
+			$count= $this->executeUpdate($sql, array($username, $password, $address));
+
+			return $count != 0;
+		}
+		return false;
+
 	}
+
 }
 ?>

@@ -18,12 +18,12 @@
             <font size=4 face="avenir">Password:</font>
            <input type="password" size="20" name="password" >
            <br>
-      <font size=2 color="red" face="avenir"> <i> Wrong username or password, try again. </i></font>
+      <font size=3 color="red" face="avenir"> <b> Wrong username or password, try again. </b></font>
            <br>
            <br>
            <input type="submit" value="Log In">
 
-           <a href="createuser.php"> <input size=3 type="button" value="Create Account"></a>
+           <a href="createUserPage.html"> <input size=3 type="button" value="Create Account"></a>
         </form>
 </div>
 </body>

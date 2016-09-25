@@ -21,17 +21,25 @@ exit();
 
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
+$address = $_REQUEST['address'];
 
-if (!$db->correctUser($username, $password)) {
+if($password == null || $username == null || $address == null){
+  $db->closeConnection();
 
-$db->closeConnection();
+  header("Location: wrongCreateUserPage.html");
 
-header("Location: wrongUserStartPage.php");
-
-exit();
+  exit();
 
 }
 
+  if (!$db->createUser($username, $password, $address)) {
+
+    $db->closeConnection();
+
+    header("Location: wrongCreateUserPage.html");
+
+    exit();
+}
 $db->closeConnection();
 
 session_start();
@@ -40,6 +48,9 @@ $_SESSION['db'] = $db;
 
 $_SESSION['username'] = $username;
 
-header("Location: homepage.php");
+header("Location: newUserStartPage.php");
+
+
+
 
 ?>

@@ -1,6 +1,5 @@
 <?php
 	require_once('database.inc.php');
-
 	session_start();
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
@@ -83,12 +82,10 @@ body{
   border: 0px solid black;
   align-content: center;
 }
-
 div.upper{
 	font-family: Calibri;
 	font-size: 20px;
 }
-
 div.transbox {
   width: 100%;
   height: auto;
@@ -97,16 +94,13 @@ div.transbox {
   background: rgba(255,255,255,0.8);
   border-radius: 5px;
 }
-
 div.transbox p {
   font-family: Calibri;
   font-size: 35px;
   padding: 5px 5px 5px 5px;
   color: #000000;
   text-align: center;
-
 }
-
 button {
 	 font-size: 25px;
 	 color: #000000;
