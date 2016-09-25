@@ -26,7 +26,7 @@ if (!$db->correctUser($username, $password)) {
 
 $db->closeConnection();
 
-header("Location: createuser.php");
+header("Location: wrongUserStartPage.php");
 
 exit();
 
@@ -44,6 +44,6 @@ $_SESSION['db'] = $db;
 
 $_SESSION['username'] = $username;
 
-header("Location: next.php");
+header("Location: homepage.php");
 
 ?>
