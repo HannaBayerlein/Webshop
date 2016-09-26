@@ -116,10 +116,12 @@ class Database {
 	public function correctUser($username, $password) {
 		$sql = "select password from users where username = ?";
 		$result = $this->executeQuery($sql, array($username));
-
-		if(password_verify($password, $result)){
+		$hash = "hash";
+		foreach($result as $row){
+			$hash =$row['password'];
+		}
+		if(password_verify($password, $hash)){
 			return true;
-
 		}
 			return false;
 	}
