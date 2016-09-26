@@ -4,7 +4,7 @@
 	session_start();
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
-  $item = $_SESSION['item'];
+    $item = $_SESSION['items'];
 
 ?>
 
@@ -16,7 +16,7 @@
 	</div>
 <div class="transbox">
        <p>Your cart</p>
-        <?php print $item ?>
+        <?php foreach ($item as $entry) echo $entry . ','; ?>
 </div>
 
 </body>

@@ -7,7 +7,7 @@ require_once('database.inc.php');
 	session_start();
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
-	$_SESSION['item']= $item;
+	$_SESSION['items'][] = $item;
 
 
 header("Location: cart.php");
