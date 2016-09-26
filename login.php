@@ -22,24 +22,37 @@ exit();
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
-if (!$db->correctUser($username, $password)) {
+if(!$db->blockedPassword($username)){
 
-$db->closeConnection();
+      if (!$db->correctUser($username, $password)) {
+      $db->increaseCount($username);
 
-header("Location: wrongUserStartPage.php");
+      $db->closeConnection();
 
-exit();
+      header("Location: wrongUserStartPage.php");
+
+      exit();
+
+    }else{
+          $db->resetCounter($username);
+
+          $db->closeConnection();
+
+          session_start();
+
+          $_SESSION['db'] = $db;
+
+          $_SESSION['username'] = $username;
+
+          header("Location: homepage.php");
+        }
+
+}else{
+
+  $db->closeConnection();
+  header("Location: blockedUser.php");
+  exit();
 
 }
-
-$db->closeConnection();
-
-session_start();
-
-$_SESSION['db'] = $db;
-
-$_SESSION['username'] = $username;
-
-header("Location: homepage.php");
 
 ?>

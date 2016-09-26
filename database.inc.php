@@ -126,7 +126,24 @@ class Database {
 			return false;
 	}
 
+	public function resetCounter($username){
+		$sql = "update users set counter=0 where username = ?";
+		$result = $this->executeUpdate($sql, array($username));
 
+	}
+
+	public function blockedPassword($username){
+		$sql = "select counter from users where username = ? and counter>2";
+		$result = $this->executeQuery($sql, array($username));
+		#echo count($result);
+		return count($result) !=0;
+	}
+
+	public function increaseCount($username){
+		$sql = "update users set counter=counter+1 where username = ?";
+		$result = $this->executeUpdate($sql, array($username));
+
+	}
 
 	public function createUser($username, $password, $address){
 		$sql1 = "select username from users where username = ?";
