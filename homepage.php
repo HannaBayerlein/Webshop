@@ -64,7 +64,21 @@
 				 <td align="center"><button name="item" type="submit" value="spooky">KÖP</button></td></td>
 			 </tr>
 			 </table>
-			   </form>
+			   </form			
+			<div style="color:#E00000">
+				<h>Kommentarer</h>
+			</div>
+			<textarea name="textarea" rows="4" cols="50" form="commentbox" minlength="1" maxlength"200">
+			</textarea>
+			<form action="homepage.php" method="POST" id="commentbox"> 
+				<input type="Submit" value"Skicka">
+			</form>
+			
+			<?php
+			$textarea = htmlspecialchars($_POST["textarea"]); // skicka till SQL databas!
+			echo "the information was recieved!"<br/>
+			echo $textarea  
+			?>
 </div>
 
 </body>
