@@ -156,7 +156,11 @@ class Database {
 			return $count != 0;
 		}
 		return false;
-
+	}
+	
+	public function createComment($username, $comment){
+		// insert username in username slot in the database table
+		// insert comment in comment slot in the database table
 	}
 
 }
