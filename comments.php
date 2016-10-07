@@ -14,7 +14,7 @@
 <title>HomePage</title>
 <body>
 	<div class="upper">
-	<b>Inloggad som: </b>  <?php print $username ?>
+	<b>Inloggad som: </b>  <?php print htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?>
 	</div>
 <div class="transbox">
     <div class="title">Make a comment</div>
@@ -39,9 +39,9 @@
     foreach ($commentIDs as $commentID) {
       $commentName = $db->getCommentName($commentID);
       $comment = $db->getComment($commentID);
-      print "<b>Skrivet av:</b> $commentName";
+      print "<b>Skrivet av:</b>" . htmlspecialchars($commentName, ENT_QUOTES, 'UTF-8');
       print "<br>";
-      print $comment;
+      print htmlspecialchars($comment, ENT_QUOTES, 'UTF-8');
       print "<br><br>";
     }
     $db->closeConnection();

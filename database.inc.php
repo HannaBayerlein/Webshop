@@ -1,4 +1,5 @@
 <?php
+require_once '/var/www/projekt/phpPasswordHashingLib/passwordLib.php';
 /*
  * Class Database: interface to the movie database from PHP.
  *
