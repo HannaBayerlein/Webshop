@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="upper">
-  <b>Logged in as: </b> <?php print $username ?>
+	<b>Inloggad som: </b>  <?php print htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?>
 <div class="transbox">
   <form method "post" action="receipt.php">
     <font size=4 face="avenir">Full name: </font>

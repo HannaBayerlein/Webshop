@@ -14,25 +14,25 @@
 </head>
 <body>
 <div class="upper">
-  <b>Logged in as: </b> <?php print $username ?>
+	<b>Inloggad som: </b>  <?php print htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?>
 <div class="transbox">
     <h1> RECEIPT </h1>
     <font size=4 face="avenir">Full name: 
 <?php 
-    echo $_GET['fullname'];
+    echo htmlspecialchars($_GET['fullname'], ENT_QUOTES, 'UTF-8');
 ?>
 
 <br />
 Address: 
 <?php
-    echo $_GET['address'];
+    echo htmlspecialchars($_GET['address'], ENT_QUOTES, 'UTF-8');
 ?>
 
 <br />
 
 Username:
 <?php
-    echo $username;
+    echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 ?>
 
 <br />

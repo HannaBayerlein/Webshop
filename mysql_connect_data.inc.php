@@ -4,7 +4,7 @@ $host = "localhost";
 
 $userName = "root";
 
-$password = "";
+$password = "root";
 
 $database = "webshop";
 

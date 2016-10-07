@@ -12,7 +12,7 @@
 	<div class="upper">
 		<table id="items" align="center" style="width:100%">
 			<tr>
-				<td> <p><b>Inloggad som: </b>  <?php print $username ?> </p></td>
+				<td> <p><b>Inloggad som: </b> <?php print htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?> </p></td>
 				<td>  <p><a href="comments.php"><b>Make a comment</b></a></p>
 				<td> <p><a href="payment.php"><b>Kundvagn:</b>
 					<?php print count($items);?> st produkter. </a></p>
