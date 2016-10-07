@@ -1,4 +1,5 @@
 <?php
+    include "security.php";
 
 require_once('database.inc.php');
 

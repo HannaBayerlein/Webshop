@@ -235,5 +235,16 @@ class Database {
 			return false;
 		}
 	}
+
+	public function getLoginCookie($username){
+		$sql = "select login_cookie from users where username=?";
+		$result = $this->executeQuery($sql, array($username));
+		$cookie = "";
+		foreach($result as $row){
+			$cookie=$row['login_cookie'];
+		}
+		return $cookie;
+	}
+
 }
 ?>

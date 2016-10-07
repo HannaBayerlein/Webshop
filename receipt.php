@@ -1,4 +1,5 @@
 <?php
+    include "security.php";
 	session_start();
 	require_once('database.inc.php');
 	$db = $_SESSION['db'];

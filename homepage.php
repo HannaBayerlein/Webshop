@@ -1,15 +1,5 @@
 <?php
-	require_once('database.inc.php');
-	session_start();
-	$db = $_SESSION['db'];
-    if($db == null)
-        header("Location: startpage.php");
-
-    $db->openConnection();
-	$username = $_SESSION['username'];
-	$items = $_SESSION['items'];
-    if (!$db->compareCookie($_SESSION['login_cookie'], $username))
-        header("Location: startpage.php");
+    include "security.php"
 ?>
 
 <html>
