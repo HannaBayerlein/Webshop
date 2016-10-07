@@ -203,5 +203,15 @@ class Database {
 		$sql = "update users set cookie= $login_cookie where username=?";
 		$this->executeUpdate($sql, array($username));
 	}	
+
+	public function compareCookie($login_cookie, $username){
+		$sql = "select login_cookie from users where username=?";
+		$result = $this->executeQuery($sql, array($username));
+		if($result == $login_cookie){ //TODO if both are NULL
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
 ?>
