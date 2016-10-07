@@ -7,7 +7,7 @@
   $db->openConnection();
   $commentIDs = $db->getAllCommentIDs();
   $db->closeConnection();
-
+  $token = sha1($_SESSION['login_cookie'] + $username);
 ?>
 
 <html>
@@ -26,6 +26,7 @@
           <input type="textarea" name="comment" rows="4" cols="50" minlength="1" maxlength="200">
           <br><br>
           <input type="submit" value="Skicka kommentar">
+	  <input type="hidden" name="CSRFToken" value="<?php echo $token ?>">
       </form>
 </div>
 <div class="transbox">
