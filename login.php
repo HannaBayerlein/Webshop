@@ -44,6 +44,8 @@ if(!$db->blockedPassword($username)){
 
           $_SESSION['username'] = $username;
 
+	  $_SESSION['login_cookie'] = sha1($username + $password + time());
+
           header("Location: homepage.php");
         }
 

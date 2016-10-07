@@ -23,7 +23,7 @@
           <input type="text" name="name">
           <br>
           <p>Kommentar:</p>
-          <input type="textarea" name="comment">
+          <input type="textarea" name="comment" rows="4" cols="50" minlength="1" maxlength="200">
           <br><br>
           <input type="submit" value="Skicka kommentar">
       </form>
