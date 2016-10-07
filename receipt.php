@@ -4,7 +4,7 @@
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
     $items = $_SESSION['items'];
-    $total_cost = $_SESSION['cost'];
+  //  $total_cost = $_SESSION['cost'];
     $_SESSION['items'] = [];
 ?>
 <html>
@@ -17,13 +17,13 @@
 	<b>Inloggad som: </b>  <?php print htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?>
 <div class="transbox">
     <h1> RECEIPT </h1>
-    <font size=4 face="avenir">Full name: 
-<?php 
+    <font size=4 face="avenir">Full name:
+<?php
     echo htmlspecialchars($_GET['fullname'], ENT_QUOTES, 'UTF-8');
 ?>
 
 <br />
-Address: 
+Address:
 <?php
     echo htmlspecialchars($_GET['address'], ENT_QUOTES, 'UTF-8');
 ?>
@@ -37,12 +37,12 @@ Username:
 
 <br />
 <br />
-    
+
 <br />
 <table>
 <tr><td width=10%> PRODUCTS </td><td width=10%> PRICE </td></tr>
 <tr><td></td><td></td></tr>
-<?php 
+<?php
     foreach ($items as $entry) {
         print "<tr><td>$entry</td><td>100</td></tr>";
 }?>
@@ -52,6 +52,8 @@ Username:
     //$total_cost
 ?>
      </font>
+		 <a href="homepage.php"> <input size=3 type="button" value="Back to Homepage"></a>
+
 </div>
 </body>
 </html>

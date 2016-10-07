@@ -38,9 +38,9 @@
 					<td> <p> Rainbow  </p></td>
 				</tr>
 				<tr>
-				 <td align="center"><button name="item" type="submit" value="pumkin">KÖP</button></td>
-				 <td align="center"><button name="item" type="submit" value="strawberry">KÖP</button></td></td>
-				 <td align="center"><button name="item" type="submit" value="rainbow">KÖP</button></td></td>
+				 <td align="center"><button name="item" type="submit" value="Pumpkin">KÖP</button></td>
+				 <td align="center"><button name="item" type="submit" value="Strawberry">KÖP</button></td></td>
+				 <td align="center"><button name="item" type="submit" value="Rainbow">KÖP</button></td></td>
 			 </tr>
 			 <tr>
 				 <tr>
@@ -54,9 +54,9 @@
 					<td> <p> Flower </p></td>
 				</tr>
 				<tr>
-				 <td align="center"><button name="item" type="submit" value="rose">KÖP</button></td>
-				 <td align="center"><button name="item" type="submit" value="mint">KÖP</button></td></td>
-				 <td align="center"><button name="item" type="submit" value="flower">KÖP</button></td></td>
+				 <td align="center"><button name="item" type="submit" value="Rose">KÖP</button></td>
+				 <td align="center"><button name="item" type="submit" value="Mint">KÖP</button></td></td>
+				 <td align="center"><button name="item" type="submit" value="Flower">KÖP</button></td></td>
 			 </tr>
 				 <tr>
 					 <td> <p><img src="https://cdn1.cdnme.se/894481/9-3/large4_57e6c15a9606ee5894045a5f.jpg" alt="Annie" style="width:100%;"></p></td>
@@ -64,15 +64,16 @@
 					 <td> <p><img src="https://cdn1.cdnme.se/894481/9-3/large9_57e6c1519606ee58da02972d.jpg" alt="Annie" style="width:100%;"></p></td>
 					 </tr>
 				 <tr>
-					<td> <p> Umberella </p></td>
+					<td> <p> Umbrella </p></td>
 					<td> <p> Pink </p></td>
 					<td> <p> Spooky </p></td>
-				</tr>
-				<tr>
-				 <td align="center"><button name="item" type="submit" value="umbrella">KÖP</button></td>
-				 <td align="center"><button name="item" type="submit" value="pink">KÖP</button></td></td>
-				 <td align="center"><button name="item" type="submit" value="spooky">KÖP</button></td></td>
 			 </tr>
+				<tr>
+				 <td align="center"><button name="item" type="submit" value="Umbrella">KÖP</button></td>
+				 <td align="center"><button name="item" type="submit" value="Pink">KÖP</button></td></td>
+				 <td align="center"><button name="item" type="submit" value="Spooky">KÖP</button></td></td>
+	 </tr>
+
 			 </table>
 			   </form>
 </div>
