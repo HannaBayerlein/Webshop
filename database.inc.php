@@ -197,24 +197,6 @@ class Database {
 		$result = $this->executeUpdate($sql, array($username));
 	}
 
-	public function getComment($commentID){
-		$sql = "select comment from comments where commentID=?";
-		$result = $this->executeQuery($sql, array($commentID));
-		$comment = "";
-		foreach($result as $row){
-			$comment=$row['comment'];
-		}
-		return $comment;
-	}
-	public function getCommentName($commentID){
-		$sql = "select name from comments where commentID=?";
-		$result = $this->executeQuery($sql, array($commentID));
-		$commentName = "";
-		foreach($result as $row){
-			$commentName=$row['name'];
-		}
-		return $commentName;
-	}
 	public function putCookie($login_cookie, $username){
 		//$sql = "update users set login_cookie=? where username=?";
 		  //$result = $this->executeUpdate($sql, array($login_cookie, $username));

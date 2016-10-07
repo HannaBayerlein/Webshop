@@ -1,9 +1,11 @@
 <?php
 
+echo "test";
 require_once('database.inc.php');
+echo "test";
 
 require_once("mysql_connect_data.inc.php");
-
+echo "test";
 
 
 $db = new Database($host, $userName, $password, $database);
