@@ -3,13 +3,23 @@
 	session_start();
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
+	$items = $_SESSION['items'];
 ?>
 
 <html>
 <title>HomePage</title>
 <body>
 	<div class="upper">
-	<b>Inloggad som: </b>  <?php print $username ?>
+		<table id="items" align="center" style="width:100%">
+			<tr>
+				<td> <p><b>Inloggad som: </b>  <?php print $username ?> </p></td>
+				<td>  <p><a href="comments.php"><b>Make a comment</b></a></p>
+				<td> <p><a href="payment.php"><b>Kundvagn:</b>
+					<?php print count($items);?> st produkter. </a></p>
+			 </tr><td></td><td></td><td><b>Summa:</b> <?php print count($items)*100 ;?>:-</td>
+
+			</tr>
+</table>
 	</div>
 <div class="transbox">
        <p>Pick your cupcakes!</p>
@@ -64,16 +74,8 @@
 				 <td align="center"><button name="item" type="submit" value="spooky">KÖP</button></td></td>
 			 </tr>
 			 </table>
-			   </form			
-			<div style="color:#E00000">
-            <h>Kommentarer</h>
-			</div>
-			<form action="comments.php" method="POST" id="commentbox"> 
-				<input type="Submit" value"Skicka">
-			</form>
+			   </form>
 </div>
-
-<a href=payment.php>PAY</a>
 
 </body>
 </html>
@@ -109,6 +111,24 @@ div.transbox p {
   color: #000000;
   text-align: center;
 }
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+	color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
 button {
 	 font-size: 25px;
 	 color: #000000;
