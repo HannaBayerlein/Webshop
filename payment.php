@@ -4,7 +4,7 @@
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
     $items = $_SESSION['items'];
-    $total_cost = $_SESSION['cost'];
+  //  $total_cost = $_SESSION['cost'];
     //$address = $db
 ?>
 <html>
@@ -21,7 +21,7 @@
     <input type="text" size="20" name="fullname">
     <br />
     <font size=4 face="avenir">Address: </font>
-    <input type="text" size="20" name="address"> <?php print $address?>
+    <input type="text" size="20" name="address">
     <br />
     <br />
     <font size=4 face="avenir">Products: <?php
@@ -36,6 +36,7 @@
     <br />
     <br />
     <input type="submit" value="Pay">
+		<a href="homepage.php"> <input size=3 type="button" value="Shop More"></a>
   </form>
 </div>
 </body>
