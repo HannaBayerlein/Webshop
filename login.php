@@ -39,6 +39,7 @@ if(!$db->blockedPassword($username)){
           $login_cookie = sha1($username + $password + time());
           $db->putCookie($login_cookie, $username);
 
+
           $db->closeConnection();
 
           session_start();

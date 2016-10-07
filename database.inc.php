@@ -130,7 +130,6 @@ class Database {
 	public function resetCounter($username){
 		$sql = "update users set counter=0 where username = ?";
 		$result = $this->executeUpdate($sql, array($username));
-
 	}
 
 	public function blockedPassword($username){
@@ -142,7 +141,6 @@ class Database {
 	public function increaseCount($username){
 		$sql = "update users set counter=counter+1 where username = ?";
 		$result = $this->executeUpdate($sql, array($username));
-
 	}
 
 	public function createUser($username, $password, $address){
@@ -157,13 +155,8 @@ class Database {
 		}
 		return false;
 	}
-	
-	public function createComment($username, $comment){
-		// insert username in username slot in the database table
-		// insert comment in comment slot in the database table
-	}
-	
-		public function addComment($name, $comment){
+
+	public function addComment($name, $comment){
 			$sql = "insert into comments (name, comment) values (?, ?)";
 			$result = $this->executeUpdate($sql, array($name, $comment));
 	}
@@ -198,12 +191,36 @@ class Database {
 		}
 		return $commentName;
 	}
+
+	public function resetSession($username){
+		$sql = "update users set login_cookie=NULL where username = ?";
+		$result = $this->executeUpdate($sql, array($username));
+	}
+
+	public function getComment($commentID){
+		$sql = "select comment from comments where commentID=?";
+		$result = $this->executeQuery($sql, array($commentID));
+		$comment = "";
+		foreach($result as $row){
+			$comment=$row['comment'];
+		}
+		return $comment;
+	}
+	public function getCommentName($commentID){
+		$sql = "select name from comments where commentID=?";
+		$result = $this->executeQuery($sql, array($commentID));
+		$commentName = "";
+		foreach($result as $row){
+			$commentName=$row['name'];
+		}
+		return $commentName;
+	}
 	public function putCookie($login_cookie, $username){
 		//$sql = "update users set login_cookie=? where username=?";
 		  //$result = $this->executeUpdate($sql, array($login_cookie, $username));
 		$sql = "update users set login_cookie=? where username = ?";
 		$result = $this->executeUpdate($sql, array($login_cookie, $username));
-	}	
+	}
 
 	public function compareCookie($login_cookie, $username){
 		$sql = "select login_cookie from users where username=?";

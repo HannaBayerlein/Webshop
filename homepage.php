@@ -2,7 +2,7 @@
 	require_once('database.inc.php');
 	session_start();
 	$db = $_SESSION['db'];
-    if($db == null) 
+    if($db == null)
         header("Location: startpage.php");
 
     $db->openConnection();
@@ -22,6 +22,8 @@
 				<td>  <p><a href="comments.php"><b>Make a comment</b></a></p>
 				<td> <p><a href="payment.php"><b>Kundvagn:</b>
 					<?php print count($items);?> st produkter. </a></p>
+
+				<td><p><a href="logout.php"><b>Logga ut</b></a></p></td>
 			 </tr><td></td><td></td><td><b>Summa:</b> <?php print count($items)*100 ;?>:-</td>
 
 			</tr>
