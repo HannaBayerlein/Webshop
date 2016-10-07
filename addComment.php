@@ -19,8 +19,8 @@ exit();
 
 }
 
-$name = $_REQUEST['name'];
-$comment = $_REQUEST['comment'];
+$name = $_POST['name'];
+$comment = $_POST['comment'];
 
 print $name;
 print $comment;

@@ -136,7 +136,6 @@ class Database {
 	public function blockedPassword($username){
 		$sql = "select counter from users where username = ? and counter>2";
 		$result = $this->executeQuery($sql, array($username));
-		#echo count($result);
 		return count($result) !=0;
 	}
 
@@ -200,14 +199,20 @@ class Database {
 		return $commentName;
 	}
 	public function putCookie($login_cookie, $username){
-		$sql = "update users set cookie= $login_cookie where username=?";
-		$this->executeUpdate($sql, array($username));
+		//$sql = "update users set login_cookie=? where username=?";
+		  //$result = $this->executeUpdate($sql, array($login_cookie, $username));
+		$sql = "update users set login_cookie=? where username = ?";
+		$result = $this->executeUpdate($sql, array($login_cookie, $username));
 	}	
 
 	public function compareCookie($login_cookie, $username){
 		$sql = "select login_cookie from users where username=?";
 		$result = $this->executeQuery($sql, array($username));
-		if($result == $login_cookie){ //TODO if both are NULL
+        $log_cook = "";
+		foreach($result as $row){
+			$log_cook=$row['login_cookie'];
+        }
+		if($log_cook == $login_cookie){ //TODO if both are NULL
 			return true;
 		} else {
 			return false;
