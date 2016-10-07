@@ -198,6 +198,9 @@ class Database {
 		}
 		return $commentName;
 	}
-
+	public function putCookie($login_cookie, $username){
+		$sql = "update users set cookie= $login_cookie where username=?";
+		$this->executeUpdate($sql, array($username));
+	}	
 }
 ?>
