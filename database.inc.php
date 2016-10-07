@@ -162,6 +162,42 @@ class Database {
 		// insert username in username slot in the database table
 		// insert comment in comment slot in the database table
 	}
+	
+		public function addComment($name, $comment){
+			$sql = "insert into comments (name, comment) values (?, ?)";
+			$result = $this->executeUpdate($sql, array($name, $comment));
+	}
+
+	public function getAllCommentIDs(){
+		$sql = "select commentID from comments ORDER BY commentID DESC";
+		$result = $this->executeQuery($sql, null);
+
+		$commentIDs = array();
+		foreach($result as $row){
+				$comment=$row['commentID'];
+				$commentIDs[$comment]=$row['commentID'];
+		}
+		return $commentIDs;
+	}
+
+	public function getComment($commentID){
+		$sql = "select comment from comments where commentID=?";
+		$result = $this->executeQuery($sql, array($commentID));
+		$comment = "";
+		foreach($result as $row){
+			$comment=$row['comment'];
+		}
+		return $comment;
+	}
+	public function getCommentName($commentID){
+		$sql = "select name from comments where commentID=?";
+		$result = $this->executeQuery($sql, array($commentID));
+		$commentName = "";
+		foreach($result as $row){
+			$commentName=$row['name'];
+		}
+		return $commentName;
+	}
 
 }
 ?>
