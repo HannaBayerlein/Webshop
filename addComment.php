@@ -21,8 +21,8 @@ exit();
 $username = $_SESSION['username'];
 if($_POST['CSRFToken'] != sha1($username + getLoginCookie($username))
 	header("Location: cannotConnect.html"); 
-$name = $_REQUEST['name'];
-$comment = $_REQUEST['comment'];
+$name = $_POST['name'];
+$comment = $_POST['comment'];
 
 print $name;
 print $comment;

@@ -33,8 +33,11 @@ if(!$db->blockedPassword($username)){
 
       exit();
 
-    }else{
+      }else{
           $db->resetCounter($username);
+
+          $login_cookie = sha1($username + $password + time());
+          $db->putCookie($login_cookie, $username);
 
           $db->closeConnection();
 
@@ -44,7 +47,7 @@ if(!$db->blockedPassword($username)){
 
           $_SESSION['username'] = $username;
 
-	  $_SESSION['login_cookie'] = sha1($username + $password + time());
+        $_SESSION['login_cookie'] = $login_cookie;
 
           header("Location: homepage.php");
         }
