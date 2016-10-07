@@ -10,6 +10,6 @@ require_once('database.inc.php');
 	$_SESSION['items'][] = $item;
 
 
-header("Location: cart.php");
+header("Location: homepage.php");
 
 ?>
