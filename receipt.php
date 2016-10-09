@@ -5,7 +5,13 @@
 	$db = $_SESSION['db'];
 	$username = $_SESSION['username'];
     $items = $_SESSION['items'];
+    $db->openConnection();
   //  $total_cost = $_SESSION['cost'];
+    if($_POST['CSRFToken'] != sha1($username + $db->getLoginCookie($username))){
+        header("Location: homepage.php");
+        exit();
+    }
+    $db->closeConnection();
     $_SESSION['items'] = [];
 ?>
 <html>
@@ -20,13 +26,13 @@
     <h1> RECEIPT </h1>
     <font size=4 face="avenir">Full name:
 <?php
-    echo htmlspecialchars($_GET['fullname'], ENT_QUOTES, 'UTF-8');
+    echo htmlspecialchars($_POST['fullname'], ENT_QUOTES, 'UTF-8');
 ?>
 
 <br />
 Address:
 <?php
-    echo htmlspecialchars($_GET['address'], ENT_QUOTES, 'UTF-8');
+    echo htmlspecialchars($_POST['address'], ENT_QUOTES, 'UTF-8');
 ?>
 
 <br />
